@@ -1,0 +1,12 @@
+O modelo com melhor desempenho geral foi **Regressão Logística (Tuned)**,
+    com F1-score de 0.414 e acurácia de 0.590.
+
+    Embora o Random Forest apresente uma acurácia ligeiramente superior,
+    a Regressão Logística manteve melhor equilíbrio entre precisão e recall,
+    o que a torna mais consistente para bases desbalanceadas.
+
+    Em termos de interpretação, a Regressão Logística é linear e mais simples
+    de explicar para stakeholders, enquanto o Random Forest é mais robusto,
+    podendo capturar relações não lineares. Dependendo do objetivo de negócio,
+    ambos podem ser usados: a regressão para previsões rápidas e interpretáveis,
+    o Random Forest para cenários que exigem mais precisão.

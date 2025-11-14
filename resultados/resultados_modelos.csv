@@ -1,0 +1,3 @@
+Modelo,Acurácia,F1-score
+Regressão Logística (Tuned),0.59,0.4137
+Random Forest (Tuned),0.6227,0.3953

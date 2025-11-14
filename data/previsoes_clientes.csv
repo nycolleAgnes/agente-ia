@@ -1,0 +1,4 @@
+client_id,idade,renda_mensal,tempo_emprego_anos,qtd_contas,score_credito,historico_atrasos,valor_emprestimo,parcelas,Prob_Inadimplente,Predição
+1001,25,2500,1.2,1,580,2,5000,12,0.565645937288793,Inadimplente
+1002,45,8000,5.4,3,700,0,40000,36,0.40316470164541457,Adimplente
+1003,60,12000,10.1,2,820,1,100000,48,0.49194459279405384,Adimplente
