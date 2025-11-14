@@ -164,11 +164,11 @@ pip install -r requirements.txt
 
 ### 4. Executar o pipeline completo
 
-# 1 Gerar os dados sintéticos
+### 1 Gerar os dados sintéticos
 python scripts/gera_dados.py
-# 2 Treinar e salvar o modelo
+### 2 Treinar e salvar o modelo
 python scripts/train_model.py
-# 3 Realizar previsões
+### 3 Realizar previsões
 python scripts/predict.py
 
 Ou, se preferir executar de forma interativa:
@@ -201,20 +201,20 @@ e execute — ela faz o clone, instala dependências e mostra arquivos:
 
 python
 
-# 1) clone o repositório (somente se ainda não estiver no ambiente)
+### 1) clone o repositório (somente se ainda não estiver no ambiente)
 !rm -rf agente-ia
 !git clone https://github.com/nycolleAgnes/agente-ia.git
 
-# 2) entre na pasta do projeto
+### 2) entre na pasta do projeto
 %cd /content/agente-ia
 
-# 3) inspecione a estrutura
+### 3) inspecione a estrutura
 !ls -la
 !ls -la data
 !ls -la model
 !sed -n '1,120p' requirements.txt || true
 
-# 4) instale dependências do requirements (se houver)
+### 4) instale dependências do requirements (se houver)
 !pip install -r requirements.txt
 
 **Observações :**
@@ -234,7 +234,7 @@ python
 from google.colab import drive
 drive.mount('/content/drive')
 
-# copiar o projeto para o Drive (opcional, para salvar modificações)
+### copiar o projeto para o Drive (opcional, para salvar modificações)
 !cp -r /content/agente-ia /content/drive/MyDrive/agente-ia_copy
 
 **Dica: deixe saídas (ex.: resultados/, model/) dentro de /content/drive/MyDrive/ para não perder.**
@@ -247,13 +247,13 @@ drive.mount('/content/drive')
 
 ---
 bash
-# gerar dados com o script
+### gerar dados com o script
 !python3 scripts/gera_dados.py
 
-# treinar modelo
+### treinar modelo
 !python3 scripts/train_model.py
 
-# previsões
+### previsões
 !python3 scripts/predict.py --input data/novos_dados.csv --output resultados/preds.csv
 
 **Dicas**
@@ -274,7 +274,7 @@ python
 
 import os
 BASE = os.path.abspath(os.path.dirname(__file__))  # dentro de scripts (quando __file__ existe)
-# no notebook:
+## no notebook:
 BASE = "/content/agente-ia"
 DATA_PATH = os.path.join(BASE, "data", "clientes_sinteticos.csv")
 
