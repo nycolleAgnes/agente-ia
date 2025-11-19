@@ -17,7 +17,8 @@ except ImportError:
 if IN_COLAB:
     from google.colab import drive
     drive.mount("/content/drive")
-    base_path = "/content/drive/MyDrive/agente-ia/data"
+    base_path = "data/clientes_sinteticos.csv"
+
 else:
     base_path = os.path.join(os.getcwd(), "../data")  # caminho relativo local
 
