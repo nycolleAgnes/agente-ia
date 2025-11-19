@@ -18,13 +18,11 @@ except ImportError:
     IN_COLAB = False
 
 if IN_COLAB:
-    from google.colab import drive
-    drive.mount('/content/drive')
     BASE_DIR = "/content/drive/MyDrive/agente-ia"
-    print("✅ Executando no Google Colab.")
+    print(" Executando no Google Colab.")
 else:
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    print("✅ Executando localmente (VS Code).")
+    print(" Executando localmente (VS Code).")
 
 # Caminho dos dados e saída do modelo
 data_path = os.path.join(BASE_DIR, "data", "clientes_sinteticos.csv")

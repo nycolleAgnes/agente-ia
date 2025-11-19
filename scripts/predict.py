@@ -12,8 +12,6 @@ except ImportError:
     IN_COLAB = False
 
 if IN_COLAB:
-    from google.colab import drive
-    drive.mount('/content/drive')
     BASE_DIR = "/content/drive/MyDrive/agente-ia"
     print(" Executando no Google Colab.")
 else:
