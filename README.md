@@ -232,13 +232,6 @@ drive.mount('/content/drive')
 
 ---
 
-### 2.5) copiar o projeto para o Drive (opcional, para salvar modificações)
-!cp -r /content/agente-ia /content/drive/MyDrive/agente-ia_copy
-
-**Dica: deixe saídas (ex.: resultados/, model/) dentro de /content/drive/MyDrive/ para não perder.**
-
----
-
 ### 3. rodar scripts Python (manualmente)
 
 - Se você preferir executar os scripts em scripts/ (ex.: gerar dados, treinar, prever), use:
@@ -261,20 +254,23 @@ bash
 ```
 python
 
+!cp -r /content/agente-ia /content/drive/MyDrive/agente-ia_copy
 !cp -r resultados /content/drive/MyDrive/agente-ia_resultados/
 !cp -r model /content/drive/MyDrive/agente-ia_modelos/
 ```
+**Dica: deixe saídas (ex.: resultados/, model/) dentro de /content/drive/MyDrive/ para não perder.**
 ---
 
 ## Principais Tecnologias
 
+```
 Linguagem:	Python 3.x
 Manipulação de Dados:	Pandas, NumPy
 Modelagem:	Scikit-learn
 Visualização:	Matplotlib, Seaborn
 IA Explicativa:	IA local (função Python) / OpenAI API (opcional)
 Ambiente:	Jupyter Notebook, Google Colab, VS Code
-
+```
 ---
 
 ### Autora
