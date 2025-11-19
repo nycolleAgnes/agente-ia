@@ -7,8 +7,9 @@ O foco é integrar **modelos preditivos tradicionais** (como Regressão Logísti
 Learning e IA generativa*.
 
 ---
-
 ## Estrutura do Projeto
+
+```
 agente-ia/
 ├── data/
 │   └── clientes_sinteticos.csv               # Base de dados sintética gerada
@@ -32,11 +33,10 @@ agente-ia/
 │   ├── resultados_modelos.csv                # Métricas comparativas dos modelos
 │   └── explicacao_modelos.txt                # Saída textual do agente de IA
 │
-├── requirements.txt                           
+├── requirements.txt
 │
 └── README.md
-
-
+```
 ---
 
 ## Etapas do Projeto
@@ -138,37 +138,40 @@ para criar explicações ainda mais detalhadas.
 
 ### 1. Clonar o repositório
 
+```
 bash
 git clone https://github.com/nycolleAgnes/agente-ia.git
 cd agente-ia
-
+```
 ---
 
 ### 2. Criar o ambiente virtual
-
+```
 bash
 
 python -m venv venv
 venv\Scripts\activate  # Windows
-# ou
+
+### ou
 source venv/bin/activate  # Linux/Mac
+```
 
 ---
 
 ### 3. Instalar dependências
+```
 bash
-
 pip install -r requirements.txt
-
+```
 ---
 
 ### 4. Executar o pipeline completo
 
-### 1 Gerar os dados sintéticos
+### 4.1 Gerar os dados sintéticos
 python scripts/gera_dados.py
-### 2 Treinar e salvar o modelo
+### 4.2 Treinar e salvar o modelo
 python scripts/train_model.py
-### 3 Realizar previsões
+### 4.3 Realizar previsões
 python scripts/predict.py
 
 Ou, se preferir executar de forma interativa:
@@ -189,35 +192,38 @@ Ou, se preferir executar de forma interativa:
 ### 1. Abrir o Colab com o repositórior 
 
 - Acesse https://colab.research.google.com**
-
+- Clique em " + Novo notebook"
 ---
 
-### 2. Preparar o ambiente — célula única (cole e execute)
+### 2. Preparar o ambiente (cole e execute)
 
-- Cole esta sequência no início do seu notebook Colab (uma célula) 
+- Cole esta sequência no início do seu notebook Colab
 e execute — ela faz o clone, instala dependências e mostra arquivos:
 
 ---
 
 python
 
-### 1) clone o repositório (somente se ainda não estiver no ambiente)
+### 2.1) Remover pasta antiga (se existir no Colab)
 !rm -rf agente-ia
+
+### 2.2) clone o repositório
 !git clone https://github.com/nycolleAgnes/agente-ia.git
 
-### 2) entre na pasta do projeto
+### 2.3) Montar o Google Drive
 from google.colab import drive
 drive.mount('/content/drive')
 
+### 2.3) entre na pasta do projeto
 %cd /content/agente-ia
 
-### 3) inspecione a estrutura
+### 2.3) inspecione a estrutura
 !ls -la
 !ls -la data
 !ls -la model
 !sed -n '1,120p' requirements.txt || true
 
-### 4) instale dependências do requirements (se houver)
+### 2.4) instale dependências do requirements (se houver)
 !pip install -r requirements.txt
 
 **Observações :**
@@ -226,29 +232,18 @@ drive.mount('/content/drive')
 
 ---
 
-### 3. montar Google Drive (para salvar resultados e persistência)
-
-- Colab é efêmero: tudo some ao reiniciar o ambiente. 
-Monte o Google Drive para persistir resultados/modelos
-
----
-python
-
-from google.colab import drive
-drive.mount('/content/drive')
-
-### copiar o projeto para o Drive (opcional, para salvar modificações)
+### 2.5) copiar o projeto para o Drive (opcional, para salvar modificações)
 !cp -r /content/agente-ia /content/drive/MyDrive/agente-ia_copy
 
 **Dica: deixe saídas (ex.: resultados/, model/) dentro de /content/drive/MyDrive/ para não perder.**
 
 ---
 
-### 4. rodar scripts Python (manualmente)
+### 3. rodar scripts Python (manualmente)
 
 - Se você preferir executar os scripts em scripts/ (ex.: gerar dados, treinar, prever), use:
 
----
+```
 bash
 ### gerar dados com o script
 !python3 scripts/gera_dados.py
@@ -258,38 +253,17 @@ bash
 
 ### previsões
 !python3 scripts/predict.py --input data/novos_dados.csv --output resultados/preds.csv
-
-**Dicas**
--Verifique se os scripts usam caminhos relativos (ex.: data/clientes_sinteticos.csv). 
-Se der erro, ajuste cwd com %cd /content/agente-ia.
+```
 
 ---
 
-### 5. caminhos relativos e recomendação de boas práticas
-
-- Use caminhos relativos a partir da raiz do projeto: data/..., model/..., resultados/....
-- No Colab, faça %cd /content/agente-ia logo após clonar.
-- Para consistência entre local e Colab, no código Python use:
-
----
-
-python
-
-import os
-BASE = os.path.abspath(os.path.dirname(__file__))  # dentro de scripts (quando __file__ existe)
-## no notebook:
-BASE = "/content/agente-ia"
-DATA_PATH = os.path.join(BASE, "data", "clientes_sinteticos.csv")
-
----
-
-### 6. salvar resultados no Drive
-
+### 4. salvar resultados no Drive
+```
 python
 
 !cp -r resultados /content/drive/MyDrive/agente-ia_resultados/
 !cp -r model /content/drive/MyDrive/agente-ia_modelos/
-
+```
 ---
 
 ## Principais Tecnologias
@@ -308,7 +282,7 @@ Ambiente:	Jupyter Notebook, Google Colab, VS Code
 Nycolle Franco
 
 GitHub
-https://github.com/nycolleAgnes/agente-ia.git
+https://github.com/nycolleAgnes
 
 LinkedIn
 https://www.linkedin.com/in/nycolle-franco-67b757261/

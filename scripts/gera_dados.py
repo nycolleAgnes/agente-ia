@@ -15,16 +15,17 @@ except ImportError:
 
 # Definir caminho base 
 if IN_COLAB:
-    from google.colab import drive
-    drive.mount("/content/drive")
-    base_path = "data/clientes_sinteticos.csv"
-
+    base_dir = "/content/agente-ia/data"
 else:
-    base_path = os.path.join(os.getcwd(), "../data")  # caminho relativo local
+    base_dir = os.path.join(os.getcwd(), "data")
 
-# Criar pasta se não existir 
-os.makedirs(base_path, exist_ok=True)
-print(f" Pasta de dados verificada/criada em: {base_path}")
+# Criar pasta se não existir
+os.makedirs(base_dir, exist_ok=True)
+print(f"Pasta de dados verificada/criada em: {base_dir}")
+
+# Caminho completo do arquivo
+output_path = os.path.join(base_dir, "clientes_sinteticos.csv")
+
 
 # Configurações iniciais 
 pd.set_option("display.float_format", "{:,.2f}".format)
@@ -69,8 +70,7 @@ df = pd.DataFrame({
 })
 
 # Salvando o dataset
-output_path = os.path.join(base_path, "clientes_sinteticos.csv")
 df.to_csv(output_path, index=False)
 
-print(f" Dataset salvo em: {output_path}")
-print(f" Total de linhas: {len(df)}")
+print(f"Dataset salvo em: {output_path}")
+print(f"Total de linhas: {len(df)}")
