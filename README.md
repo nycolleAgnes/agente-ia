@@ -206,6 +206,9 @@ python
 !git clone https://github.com/nycolleAgnes/agente-ia.git
 
 ### 2) entre na pasta do projeto
+from google.colab import drive
+drive.mount('/content/drive')
+
 %cd /content/agente-ia
 
 ### 3) inspecione a estrutura
