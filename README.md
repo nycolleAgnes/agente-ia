@@ -215,7 +215,7 @@ from google.colab import drive
 drive.mount('/content/drive')
 
 ### 2.3) entre na pasta do projeto
-%cd /content/agente-ia
+%cd /content/drive/MyDrive/agente-ia
 
 ### 2.3) inspecione a estrutura
 !ls -la
